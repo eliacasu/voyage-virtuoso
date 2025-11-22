@@ -92,28 +92,43 @@
   nav {
   background: #ffd966;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start; /* o center */
+  flex-direction: row;       /* sempre orizzontale */
+  justify-content: center;   /* centra i link */
   align-items: center;
-  overflow-x: auto; /* permette scroll orizzontale */
-  white-space: nowrap; /* evita ritorni a capo */
-  padding: 10px;
+  flex-wrap: nowrap;         /* non andare a capo */
+  padding: 10px 5px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow-x: auto;          /* scroll orizzontale se lo spazio non basta */
+  white-space: nowrap;       /* evita ritorni a capo dei link */
+}
+
+/* Nasconde la scrollbar su Webkit (opzionale per estetica) */
+nav::-webkit-scrollbar {
+  display: none;
 }
 
 nav a {
   color: #1e4d6b;
   text-decoration: none;
   font-weight: bold;
-  margin: 0 12px;
-  font-size: clamp(12px, 4vw, 18px);
+  margin: 0 12px;                 /* margini tra i link */
+  font-size: clamp(12px, 3vw, 18px); /* riduce font automaticamente su schermi piccoli */
   white-space: nowrap;
+  transition: 0.3s;
 }
 
-nav a:hover { color: white; }
+nav a:hover {
+  color: white;
+}
 
-/* Nasconde eventuali scrollbar su mobile per estetica */
-nav::-webkit-scrollbar {
-  display: none;
+/* Mobile: ulteriormente più piccolo su schermi stretti */
+@media (max-width: 480px) {
+  nav a {
+    font-size: 10px;
+    margin: 0 6px;
+  }
 }
     /* Sezioni */
     section {
