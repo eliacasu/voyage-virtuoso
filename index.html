@@ -1,380 +1,257 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Compagno di Viaggio – Elia Casu</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Voyage Virtuoso – Elia Casu</title>
 
-  <!-- Importa il font Leckerli One da Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Roboto', sans-serif; background:#f0f4f8; color:#333; line-height:1.6; }
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #f0f4f8;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero.jpg') center/cover no-repeat;
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      padding: 0 20px;
-      position: relative;
-    }
-
-    /* Titolo con Leckerli One */
-    .hero h1 {
-      font-family: 'Leckerli One', cursive;
-      font-size: 6rem; /* puoi regolare la dimensione */
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 25px;
-    }
-
-    /* Pulsanti Hero (Email / WhatsApp) */
-    .hero-buttons {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .hero-buttons a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 75px;
-      height: 75px;
-      border-radius: 50%;
-      text-decoration: none;
-      font-size: 1.8rem;
-      transition: 0.3s;
-    }
-
-    .hero-buttons a.email-btn {
-      background: #ffd966;
-      color: #1e4d6b;
-    }
-
-    .hero-buttons a.email-btn:hover {
-      background: #1e4d6b;
-      color: white;
-    }
-
-    .hero-buttons a.whatsapp-btn {
-      background: #25D366;
-      color: white;
-    }
-
-    .hero-buttons a.whatsapp-btn:hover {
-      transform: scale(1.1);
-    }
-
-  nav {
-  background: #ffd966;
-  display: flex;
-  flex-direction: row;       /* sempre orizzontale */
-  justify-content: center;   /* centra i link */
-  align-items: center;
-  flex-wrap: nowrap;         /* non andare a capo */
-  padding: 10px 5px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  overflow-x: auto;          /* scroll orizzontale se lo spazio non basta */
-  white-space: nowrap;       /* evita ritorni a capo dei link */
+/* Hero */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero.jpg') center/cover no-repeat;
+  height: 90vh;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
+  padding:0 20px;
+  position: relative;
 }
 
-/* Nasconde la scrollbar su Webkit (opzionale per estetica) */
-nav::-webkit-scrollbar {
-  display: none;
+.hero h1 {
+  font-family:'Leckerli One', cursive;
+  font-size: 6rem;
+  margin-bottom: 15px;
 }
 
-nav a {
-  color: #1e4d6b;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 0 12px;                 /* margini tra i link */
-  font-size: clamp(12px, 3vw, 18px); /* riduce font automaticamente su schermi piccoli */
-  white-space: nowrap;
-  transition: 0.3s;
+.hero p { font-size:1.3rem; margin-bottom:25px; }
+
+/* Pulsanti Hero */
+.hero-buttons {
+  position: absolute;
+  top:20px;
+  right:20px;
+  display:flex;
+  flex-direction: column;
+  gap:15px;
 }
 
-nav a:hover {
-  color: white;
+.hero-buttons a {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:75px;
+  height:75px;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:1.8rem;
+  transition:0.3s;
 }
 
-/* Mobile: ulteriormente più piccolo su schermi stretti */
-@media (max-width: 480px) {
-  nav a {
-    font-size: 10px;
-    margin: 0 6px;
-  }
+.hero-buttons a.email-btn {
+  background:#ffd966; color:#1e4d6b;
 }
-    /* Sezioni */
-    section {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 60px 20px;
-      border-radius: 10px;
-      background: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      scroll-margin-top: 80px;
-    }
 
-    section:nth-child(even) {
-      background: #f0f4f8;
-    }
+.hero-buttons a.email-btn:hover { background:#1e4d6b; color:white; }
 
-    h2 {
-      font-family: 'Roboto', sans-serif;
-      font-size: 2rem;
-      margin-bottom: 25px;
-      color: #1e4d6b;
-    }
+.hero-buttons a.whatsapp-btn {
+  background:#25D366; color:white;
+}
 
-    p, li {
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-    }
+.hero-buttons a.whatsapp-btn:hover { transform:scale(1.1); }
 
-    /* Chi Sono */
-    .about {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-    }
+/* Navbar Hamburger */
+nav {
+  background:#ffd966;
+  position: sticky; top:0; z-index:100;
+}
+
+.nav-container {
+  display:flex; justify-content: space-between; align-items:center;
+  max-width:1100px; margin:0 auto; padding:10px 20px; flex-wrap:wrap;
+}
+
+.logo {
+  font-weight:bold; color:#1e4d6b; font-size:clamp(18px,2.5vw,24px);
+}
+
+.nav-links {
+  display:flex; gap:15px;
+}
+
+.nav-links a {
+  color:#1e4d6b; text-decoration:none; font-weight:bold;
+  font-size:clamp(14px,2vw,18px); white-space:nowrap; transition:0.3s;
+}
+
+.nav-links a:hover { color:white; }
+
+/* Hamburger icon */
+.hamburger {
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  color:#1e4d6b;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .nav-links { display:none; flex-direction:column; width:100%; background:#ffd966; margin-top:10px; }
+  .nav-links.show { display:flex; }
+  .hamburger { display:block; }
+  .nav-links a { padding:10px 0; font-size:16px; text-align:center; }
+}
+
+/* Sections */
+section {
+  max-width:1100px; margin:60px auto; padding:60px 20px;
+  border-radius:10px; background:white; box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  scroll-margin-top:80px;
+}
+section:nth-child(even){ background:#f0f4f8; }
+h2 { font-family:'Roboto',sans-serif; font-size:2rem; margin-bottom:25px; color:#1e4d6b; }
+p,li { margin-bottom:15px; font-size:1.1rem; }
+
+/* Chi Sono */
+.about { display:flex; flex-wrap:wrap; align-items:center; gap:40px; }
 
 .about img {
-  width: 100%;       /* si adatta alla larghezza del contenitore */
-  max-width: 400px;  /* dimensione massima su desktop */
-  height: auto;      /* mantiene proporzioni */
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  flex: none;        /* rimuove l’espansione flex indesiderata */
-  display: block;    /* evita margini/bordi extra dai flexbox */
-  margin: 0 auto;    /* centra l’immagine se il contenitore è più grande */
+  width:100%; max-width:400px; height:auto; border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1); flex:none; display:block; margin:0 auto;
 }
 
-/* Mobile: se vuoi, puoi ridurre il max-width per telefoni */
-@media(max-width: 768px) {
-  .about img {
-    max-width: 90%; /* occupa quasi tutta la larghezza dello schermo */
-  }
+.about .text { flex:2; }
+
+@media(max-width:768px){ .about img { max-width:90%; } }
+
+/* Servizi */
+.services { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.service-card {
+  background:#ffd966; color:#1e4d6b; padding:25px; border-radius:10px; text-align:center; transition:0.3s;
+}
+.service-card h3 { margin-bottom:15px; font-family:'Montserrat',sans-serif; }
+.service-card:hover {
+  background:#1e4d6b; color:white; transform:translateY(-5px); box-shadow:0 6px 15px rgba(0,0,0,0.15);
 }
 
-    .about .text {
-      flex: 2;
-    }
+/* Destinazioni */
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.grid-item { position:relative; overflow:hidden; border-radius:10px; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+.grid-item img { width:100%; height:200px; object-fit:cover; transition:transform 0.3s; }
+.grid-item:hover img { transform:scale(1.05); }
+.grid-item span {
+  position:absolute; bottom:0; left:0; right:0;
+  background:rgba(0,0,0,0.5); color:white; text-align:center; padding:10px 0;
+  font-weight:bold; font-size:1.1rem;
+}
 
-    /* Servizi */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+/* Contatti */
+.contact-btn { display:inline-block; padding:12px 25px; background:#ffd966; color:#1e4d6b; border-radius:8px; text-decoration:none; font-weight:bold; transition:0.3s; margin-right:15px; }
+.contact-btn:hover { background:#1e4d6b; color:white; }
 
-    .service-card {
-      background: #ffd966;
-      color: #1e4d6b;
-      padding: 25px;
-      border-radius: 10px;
-      text-align: center;
-      transition: 0.3s;
-    }
+/* Footer */
+footer { background:#163b52; color:white; text-align:center; padding:25px 0; margin-top:40px; }
 
-    .service-card h3 {
-      margin-bottom: 15px;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .service-card:hover {
-      background: #1e4d6b;
-      color: white;
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    }
-
-    /* Destinazioni */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .grid-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .grid-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.3s;
-    }
-
-    .grid-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .grid-item span {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0,0,0,0.5);
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-
-    /* Contatti */
-    .contact-btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #ffd966;
-      color: #1e4d6b;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-      margin-right: 15px;
-    }
-
-    .contact-btn:hover {
-      background: #1e4d6b;
-      color: white;
-    }
-
-    /* Footer */
-    footer {
-      background: #163b52;
-      color: white;
-      text-align: center;
-      padding: 25px 0;
-      margin-top: 40px;
-    }
-
-    /* Responsive */
-    @media(max-width: 900px) {
-      .about {
-        flex-direction: column;
-      }
-      .about img {
-        max-width: 100%;
-      }
-    }
-
-    @media(max-width: 768px) {
-      nav {
-        flex-direction: column;
-      }
-      nav a {
-        margin: 8px 0;
-      }
-      .hero h1 {
-        font-size: 3rem;
-      }
-    }
-
-  </style>
+/* Responsive */
+@media(max-width:900px){ .about{ flex-direction:column; } .about img{ max-width:100%; } }
+</style>
 </head>
 <body>
 
-  <div class="hero">
-    <h1>Voyage Virtuoso</h1>
-    <p>Il tuo accompagnatore personale nel Mediterraneo</p>
-    <div class="hero-buttons">
-      <a href="mailto:tuainserire@email.com" class="email-btn"><i class="fas fa-envelope"></i></a>
-      <a href="https://wa.me/39xxxxxxxxxx" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+<div class="hero">
+  <h1>Voyage Virtuoso</h1>
+  <p>Il tuo accompagnatore personale nel Mediterraneo</p>
+  <div class="hero-buttons">
+    <a href="mailto:tuainserire@email.com" class="email-btn"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/39xxxxxxxxxx" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Voyage Virtuoso</div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <div class="nav-links" id="nav-links">
+      <a href="#chi-sono">Chi Sono</a>
+      <a href="#servizi">Servizi</a>
+      <a href="#destinazioni">Destinazioni</a>
+      <a href="#contatti">Contatti</a>
     </div>
   </div>
+</nav>
 
-  <nav>
-    <a href="#chi-sono">Chi Sono</a>
-    <a href="#servizi">Servizi</a>
-    <a href="#destinazioni">Destinazioni</a>
-    <a href="#contatti">Contatti</a>
-  </nav>
-
-  <section id="chi-sono">
-    <h2>Chi Sono</h2>
-    <div class="about">
-      <img src="images/elia.jpg" alt="Elia Casu" />
-      <div class="text">
-        <p>Mi chiamo <strong>Elia Casu</strong> e sono un accompagnatore di viaggio personale. Aiuto soprattutto viaggiatori senior e persone che vogliono viaggiare senza stress ma in maniera originale, con un accompagnatore affidabile sempre al loro fianco.</p>
-      <p>La mia missione è permetterti di vivere esperienze uniche senza preoccupazioni, curando ogni dettaglio del viaggio. <p>Il Mediterraneo è un mosaico di culture, sapori e paesaggi mozzafiato: dalle coste dorate della 
-        Grecia ai souk colorati del Marocco, ogni paese racconta una storia unica. Esplorarlo significa immergersi in tradizioni millenarie, gustare cucine straordinarie e vivere esperienze che restano nel cuore per sempre, fallo con me! <p>
-  </section>
-
-  <section id="servizi">
-    <h2>Servizi</h2>
-    <div class="services">
-      <div class="service-card"><h3>Accompagnamento</h3><p>Ti seguo durante tutto il viaggio per una sicurezza completa.</p></div>
-      <div class="service-card"><h3>Organizzazione</h3><p>Voli, documenti, assicurazioni, hotel, trasporti: tutto prenotato senza stress.</p></div>
-      <div class="service-card"><h3>Avventura</h3><p>Ti porto personalmente alla scoperta dei posti lontano dai soliti itinerari obbligati.</p></div>
-      <div class="service-card"><h3>Interpretariato</h3><p>Parlo italiano, inglese, spagnolo, francese e turco per agevolare ogni comunicazione.</p></div>
-      <div class="service-card"><h3>Gestione Imprevisti</h3><p>Mi occupo di ogni imprevisto per garantirti tranquillità.</p></div>
-      <div class="service-card"><h3>Viaggi Personalizzati</h3><p>Piani di viaggio creati su misura per ogni cliente.</p></div>
-      <div class="service-card"><h3>Documenti e visti</h3><p>Mi occupo di tutto io.</p></div>
-      <div class="service-card"><h3>Esperienza e savoir foir</h3><p>Metto a disposizione la mia esperienza per regalarti una vacanza unica.</p></div>
+<section id="chi-sono">
+  <h2>Chi Sono</h2>
+  <div class="about">
+    <img src="images/elia.jpg" alt="Elia Casu" />
+    <div class="text">
+      <p>Mi chiamo <strong>Elia Casu</strong> e sono un accompagnatore di viaggio personale. Aiuto soprattutto viaggiatori senior e persone che vogliono viaggiare senza stress ma in maniera originale, con un accompagnatore affidabile sempre al loro fianco.</p>
+      <p>La mia missione è permetterti di vivere esperienze uniche senza preoccupazioni, curando ogni dettaglio del viaggio.</p>
+      <p>Il Mediterraneo è un mosaico di culture, sapori e paesaggi mozzafiato: dalle coste dorate della Grecia ai souk colorati del Marocco, ogni paese racconta una storia unica. Esplorarlo significa immergersi in tradizioni millenarie, gustare cucine straordinarie e vivere esperienze che restano nel cuore per sempre, fallo con me!</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="destinazioni">
-    <h2>Destinazioni</h2>
-    <div class="grid">
-      <a class="grid-item" href="marocco.html"><img src="images/marocco.jpg" alt="Marocco"><span>Marocco</span></a>
-      <a class="grid-item" href="spagna.html"><img src="images/spagna.jpg" alt="Spagna"><span>Spagna</span></a>
-      <a class="grid-item" href="grecia.html"><img src="images/grecia.jpg" alt="Grecia"><span>Grecia</span></a>
-      <a class="grid-item" href="algeria.html"><img src="images/algeria.jpg" alt="Algeria"><span>Algeria</span></a>
-      <a class="grid-item" href="tunisia.html"><img src="images/tunisia.jpg" alt="Tunisia"><span>Tunisia</span></a>
-      <a class="grid-item" href="egitto.html"><img src="images/egitto.jpg" alt="Egitto"><span>Egitto</span></a>
-      <a class="grid-item" href="giordania.html"><img src="images/giordania.jpg" alt="Giordania"><span>Giordania</span></a>
-      <a class="grid-item" href="libano.html"><img src="images/libano.jpg" alt="Libano"><span>Libano</span></a>
-      <a class="grid-item" href="croazia.html"><img src="images/croazia.jpg" alt="Croazia"><span>Croazia</span></a>
-      <a class="grid-item" href="albania.html"><img src="images/albania.jpg" alt="Albania"><span>Albania</span></a>
-      <a class="grid-item" href="bosnia.html"><img src="images/bosnia.jpg" alt="Bosnia"><span>Bosnia</span></a>
-      <a class="grid-item" href="turchia.html"><img src="images/turchia.jpg" alt="Turchia"><span>Turchia</span></a>
-    </div>
-  </section>
+<section id="servizi">
+  <h2>Servizi</h2>
+  <div class="services">
+    <div class="service-card"><h3>Accompagnamento</h3><p>Ti seguo durante tutto il viaggio per una sicurezza completa.</p></div>
+    <div class="service-card"><h3>Organizzazione</h3><p>Voli, documenti, assicurazioni, hotel, trasporti: tutto prenotato senza stress.</p></div>
+    <div class="service-card"><h3>Avventura</h3><p>Ti porto personalmente alla scoperta dei posti lontano dai soliti itinerari obbligati.</p></div>
+    <div class="service-card"><h3>Interpretariato</h3><p>Parlo italiano, inglese, spagnolo, francese e turco per agevolare ogni comunicazione.</p></div>
+    <div class="service-card"><h3>Gestione Imprevisti</h3><p>Mi occupo di ogni imprevisto per garantirti tranquillità.</p></div>
+    <div class="service-card"><h3>Viaggi Personalizzati</h3><p>Piani di viaggio creati su misura per ogni cliente.</p></div>
+    <div class="service-card"><h3>Documenti e visti</h3><p>Mi occupo di tutto io.</p></div>
+    <div class="service-card"><h3>Esperienza e savoir foir</h3><p>Metto a disposizione la mia esperienza per regalarti una vacanza unica.</p></div>
+  </div>
+</section>
 
-  <section id="contatti">
-    <h2>Contatti</h2>
-    <p>Vuoi organizzare un viaggio con me? Contattami per un preventivo gratuito.</p>
-    <a class="contact-btn" href="mailto:tuainserire@email.com">Email</a>
-    <a class="contact-btn" href="https://wa.me/39xxxxxxxxxx" target="_blank">WhatsApp</a>
-  </section>
+<section id="destinazioni">
+  <h2>Destinazioni</h2>
+  <div class="grid">
+    <a class="grid-item" href="marocco.html"><img src="images/marocco.jpg" alt="Marocco"><span>Marocco</span></a>
+    <a class="grid-item" href="spagna.html"><img src="images/spagna.jpg" alt="Spagna"><span>Spagna</span></a>
+    <a class="grid-item" href="grecia.html"><img src="images/grecia.jpg" alt="Grecia"><span>Grecia</span></a>
+    <a class="grid-item" href="algeria.html"><img src="images/algeria.jpg" alt="Algeria"><span>Algeria</span></a>
+    <a class="grid-item" href="tunisia.html"><img src="images/tunisia.jpg" alt="Tunisia"><span>Tunisia</span></a>
+    <a class="grid-item" href="egitto.html"><img src="images/egitto.jpg" alt="Egitto"><span>Egitto</span></a>
+    <a class="grid-item" href="giordania.html"><img src="images/giordania.jpg" alt="Giordania"><span>Giordania</span></a>
+    <a class="grid-item" href="libano.html"><img src="images/libano.jpg" alt="Libano"><span>Libano</span></a>
+    <a class="grid-item" href="croazia.html"><img src="images/croazia.jpg" alt="Croazia"><span>Croazia</span></a>
+    <a class="grid-item" href="albania.html"><img src="images/albania.jpg" alt="Albania"><span>Albania</span></a>
+    <a class="grid-item" href="bosnia.html"><img src="images/bosnia.jpg" alt="Bosnia"><span>Bosnia</span></a>
+    <a class="grid-item" href="turchia.html"><img src="images/turchia.jpg" alt="Turchia"><span>Turchia</span></a>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2025 Compagno di Viaggio – Elia Casu</p>
-  </footer>
+<section id="contatti">
+  <h2>Contatti</h2>
+  <p>Vuoi organizzare un viaggio con me? Contattami per un preventivo gratuito.</p>
+  <a class="contact-btn" href="mailto:tuainserire@email.com">Email</a>
+  <a class="contact-btn" href="https://wa.me/39xxxxxxxxxx" target="_blank">WhatsApp</a>
+</section>
+
+<footer>
+  <p>© 2025 Voyage Virtuoso – Elia Casu</p>
+</footer>
+
+<!-- JS Navbar Hamburger -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+</script>
 
 </body>
 </html>
