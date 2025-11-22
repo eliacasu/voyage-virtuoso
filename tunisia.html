@@ -22,35 +22,33 @@ body {
   cursor:pointer;
   transition: transform 0.3s;
 }
-
 .top-logo img {
-  width:40px;   /* larghezza logo */
-  height:auto;  /* proporzioni corrette */
+  width:40px;   /* dimensione logo */
+  height:auto;
 }
-
 .top-logo:hover {
   transform: scale(1.1);
 }
-/* Griglia immagini */
+
+/* Griglia uniforme senza spazi */
 .album {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* larghezza minima 250px, cresce se c'è spazio */
-  gap: 0; /* elimina lo spazio tra le foto */
-  padding: 80px 0 0 0; /* spazio solo sopra per il logo */
-  max-width: 100%; /* usa tutta la larghezza possibile */
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* colonne flessibili */
+  gap:0; /* elimina spazi tra le foto */
+  padding-top:70px; /* spazio sopra per il logo */
+  max-width:100%;
+  margin:0 auto;
 }
 
 .album-item {
-  overflow: hidden;
-  border-radius: 0; /* elimina arrotondamenti per effetto collage */
+  overflow:hidden;
 }
 
 .album-item img {
-  width: 100%;
-  height: auto; /* mantiene proporzioni */
-  display: block; /* elimina piccoli spazi sotto le immagini */
-  object-fit: cover; /* mantiene l'immagine centrata e ritagliata se necessario */
+  width:100%;
+  height:150px; /* altezza uniforme per tutte le foto */
+  object-fit: cover; /* ritaglia e centra l'immagine mantenendo proporzioni */
+  display:block;
   transition: transform 0.3s;
 }
 
@@ -61,7 +59,7 @@ body {
 </head>
 <body>
 
-<!-- Logo che porta alla home -->
+<!-- Logo cliccabile -->
 <a href="index.html" class="top-logo">
   <img src="images/logo.png" alt="Logo">
 </a>
@@ -79,7 +77,8 @@ body {
   <div class="album-item"><img src="images/tunisia9.jpg" alt="Tunisia 9"></div>
   <div class="album-item"><img src="images/tunisia10.jpg" alt="Tunisia 10"></div>
   <div class="album-item"><img src="images/tunisia11.jpg" alt="Tunisia 11"></div>
-  <div class="album-item"><img src="images/tunisia12.jpg" alt="Tunisia 12"></div><!-- aggiungi altre foto se vuoi -->
+  <div class="album-item"><img src="images/tunisia12.jpg" alt="Tunisia 12"></div>
+  <!-- aggiungi altre foto qui se vuoi -->
 </div>
 
 </body>
