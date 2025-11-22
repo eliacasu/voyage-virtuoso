@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marocco – Album Fotografico</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stile.css"> <!-- puoi usare lo stesso CSS principale -->
+<style>
+/* Stile specifico per l'album fotografico */
+.album {
+  max-width:1100px;
+  margin:60px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.album-item {
+  position:relative;
+  overflow:hidden;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.album-item img {
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  transition: transform 0.3s;
+}
+
+.album-item:hover img {
+  transform:scale(1.05);
+}
+
+.album-item span {
+  position:absolute;
+  bottom:0; left:0; right:0;
+  background:rgba(0,0,0,0.5);
+  color:white;
+  text-align:center;
+  padding:8px 0;
+  font-weight:bold;
+  font-size:1rem;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Voyage Virtuoso</div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#chi-sono">Chi Sono</a>
+      <a href="index.html#servizi">Servizi</a>
+      <a href="index.html#destinazioni">Destinazioni</a>
+      <a href="index.html#contatti">Contatti</a>
+    </div>
+  </div>
+</nav>
+
+<section>
+  <h2>Marocco – Album Fotografico</h2>
+  <div class="album">
+    <div class="album-item"><img src="images/marocco1.jpg" alt="Marocco"><span>Marrakech</span></div>
+    <div class="album-item"><img src="images/marocco2.jpg" alt="Marocco"><span>Sahara</span></div>
+    <div class="album-item"><img src="images/marocco3.jpg" alt="Marocco"><span>Costa Atlantica</span></div>
+    <div class="album-item"><img src="images/marocco4.jpg" alt="Marocco"><span>Essaouira</span></div>
+    <!-- aggiungi altre foto qui -->
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Voyage Virtuoso – Elia Casu</p>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+</script>
+
+</body>
+</html>
