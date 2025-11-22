@@ -1,78 +1,148 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Compagno di Viaggio – Elia Casu</title>
-<style>
-html {
-scroll-behavior: smooth; /* smooth scroll per menu */
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compagno di Viaggio – Elia Casu</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    /* Reset base */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
 
+    html {scroll-behavior: smooth;}
+    body {font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; background: #f7f7f7;}
 
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-background: #f7f7f7;
-color: #333;
-}
+    header {
+      background: linear-gradient(135deg, #1e4d6b, #3a7ca5);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    header h1 {font-family: 'Montserrat', sans-serif; font-size: 3rem; margin-bottom: 10px;}
+    header p {font-size: 1.3rem;}
 
+    nav {
+      background: #163b52;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+    nav a:hover {color: #ffcc00;}
 
-header {
-background: #1e4d6b;
-color: white;
-padding: 40px;
-text-align: center;
-}
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 60px 30px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    section:nth-child(even) {background: #f0f4f8;}
 
+    h2 {font-family: 'Montserrat', sans-serif; font-size: 2rem; margin-bottom: 20px; color: #1e4d6b;}
+    p, li {font-size: 1.1rem; margin-bottom: 10px;}
 
-header h1 {
-font-size: 2.5rem;
-margin: 0;
-}
+    ul {list-style: none; padding-left: 0;}
+    ul li::before {content: '✔'; color: #1e4d6b; margin-right: 8px;}
 
+    /* Destinazioni griglia */
+    .grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
+    .grid-item {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .grid-item img {width: 100%; height: 200px; object-fit: cover; transition: transform 0.3s;}
+    .grid-item:hover img {transform: scale(1.05);}
+    .grid-item span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
 
-header p {
-font-size: 1.2rem;
-margin-top: 10px;
-}
+    /* Contatti */
+    .contact-btn {display: inline-block; padding: 12px 25px; background: #1e4d6b; color: white; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s;}
+    .contact-btn:hover {background: #3a7ca5;}
 
+    footer {background: #163b52; color: white; text-align: center; padding: 25px 0; margin-top: 40px;}
 
-nav {
-background: #163b52;
-padding: 10px;
-display: flex;
-justify-content: center;
-gap: 20px;
-position: sticky;
-top: 0;
-z-index: 100;
-}
+    @media(max-width:768px){header h1{font-size:2.2rem;} nav{flex-direction:column;} nav a{margin:8px 0;}}
+  </style>
+</head>
+<body>
 
+<header>
+  <h1>Compagno di Viaggio</h1>
+  <p>Il tuo accompagnatore personale nel Mediterraneo – con Elia Casu</p>
+</header>
 
-nav a {
-color: white;
-text-decoration: none;
-font-weight: bold;
-}
+<nav>
+  <a href="#chi-sono">Chi Sono</a>
+  <a href="#servizi">Servizi</a>
+  <a href="#destinazioni">Destinazioni</a>
+  <a href="#contatti">Contatti</a>
+</nav>
 
+<section id="chi-sono">
+  <h2>Chi Sono</h2>
+  <p>Mi chiamo <strong>Elia Casu</strong> e sono un accompagnatore di viaggio personale. Parlo italiano, inglese, francese e turco e da anni viaggio in tutto il mondo. Aiuto soprattutto viaggiatori senior, persone sole o chi non parla lingue straniere a godersi un viaggio in totale sicurezza e serenità.</p>
+  <p>La mia missione è semplice: permetterti di viaggiare senza stress, con una persona affidabile e sempre al tuo fianco.</p>
+</section>
 
-section {
-min-height: 500px; /* altezza minima per sezioni */
-max-width: 900px;
-margin: 40px auto;
-padding: 40px 20px;
-background: white;
-border-radius: 8px;
-box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
+<section id="servizi">
+  <h2>Servizi</h2>
+  <ul>
+    <li>Accompagnamento completo durante tutto il viaggio</li>
+    <li>Organizzazione e supporto per voli, hotel, trasporti</li>
+    <li>Assistenza per documenti, visti e assicurazioni</li>
+    <li>Interpretariato in italiano, inglese, francese e turco</li>
+    <li>Gestione di qualsiasi imprevisto</li>
+    <li>Viaggi personalizzati per senior e viaggiatori soli</li>
+  </ul>
+</section>
 
+<section id="destinazioni">
+  <h2>Destinazioni</h2>
+  <div class="grid">
+    <a class="grid-item" href="italia.html"><img src="https://via.placeholder.com/300x200?text=Italia" alt="Italia"><span>Italia</span></a>
+    <a class="grid-item" href="francia.html"><img src="https://via.placeholder.com/300x200?text=Francia" alt="Francia"><span>Francia</span></a>
+    <a class="grid-item" href="spagna.html"><img src="https://via.placeholder.com/300x200?text=Spagna" alt="Spagna"><span>Spagna</span></a>
+    <a class="grid-item" href="grecia.html"><img src="https://via.placeholder.com/300x200?text=Grecia" alt="Grecia"><span>Grecia</span></a>
+    <a class="grid-item" href="turchia.html"><img src="https://via.placeholder.com/300x200?text=Turchia" alt="Turchia"><span>Turchia</span></a>
+    <!-- Aggiungi altre destinazioni qui -->
+  </div>
+</section>
 
-h2 {
-color: #1e4d6b;
-font-size: 1.8rem;
-margin-bottom: 10px;
-}
+<section id="contatti">
+  <h2>Contatti</h2>
+  <p>Vuoi organizzare un viaggio con me? Contattami per un preventivo gratuito.</p>
+  <a class="contact-btn" href="mailto:tuainserire@email.com">Email</a>
+  <a class="contact-btn" href="https://wa.me/39xxxxxxxxxx" target="_blank">WhatsApp</a>
+</section>
 
+<footer>
+  <p>© 2025 Compagno di Viaggio – Elia Casu</p>
+</footer>
 
-ul {
+</body>
+</html>
