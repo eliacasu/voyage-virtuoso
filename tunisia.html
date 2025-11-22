@@ -34,7 +34,7 @@ body {
 .album {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 foto per riga */
-  grid-auto-rows: 300px; /* altezza uniforme e più grande */
+  grid-auto-rows: 250px; /* altezza uniforme e più grande */
   gap:0; /* nessuno spazio tra le foto */
   margin:0;
 }
@@ -62,6 +62,14 @@ body {
     grid-auto-rows: 200px; /* riduci altezza su mobile */
   }
 }
+  /* Mobile: 1 foto per riga, più alta */
+@media(max-width: 768px) {
+  .album {
+    grid-template-columns: 1fr; /* 1 foto per riga */
+    grid-auto-rows: 400px;      /* foto più alta su mobile */
+  }
+}
+</style
 </style>
 </head>
 <body>
