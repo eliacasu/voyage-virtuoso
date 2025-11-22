@@ -89,29 +89,36 @@
       transform: scale(1.1);
     }
 
-    /* Navbar */
-    nav {
-      background: #ffd966;
-      display: flex;
-      justify-content: center;
-      padding: 12px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+  nav {
+  background: #ffd966;
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap; /* permette ai link di andare a capo se lo spazio è troppo */
+}
 
-    nav a {
-      color: #1e4d6b;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 15px;
-      transition: 0.3s;
-    }
+nav a {
+  color: #1e4d6b;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+  transition: 0.3s;
+  font-size: clamp(14px, 2vw, 20px); /* si adatta in base alla larghezza dello schermo */
+}
 
-    nav a:hover {
-      color: white;
-    }
+nav a:hover {
+  color: white;
+}
 
+/* Rimuoviamo flex-direction: column su mobile */
+@media(max-width: 768px){
+  nav {
+    flex-direction: row; /* mantiene i link in orizzontale */
+  }
+}
     /* Sezioni */
     section {
       max-width: 1100px;
