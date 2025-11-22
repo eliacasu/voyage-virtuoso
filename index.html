@@ -163,6 +163,18 @@ p,li { margin-bottom:15px; font-size:1.1rem; }
 /* Footer */
 footer { background:#163b52; color:white; text-align:center; padding:25px 0; margin-top:40px; }
 
+/* Logo fisso in basso a sinistra */
+.bottom-logo {
+  position: fixed;
+  bottom:20px;
+  left:20px;
+  width:60px;
+  height:auto;
+  z-index:200;
+  transition: transform 0.3s;
+}
+.bottom-logo:hover { transform: scale(1.1); }
+
 /* Responsive */
 @media(max-width:900px){ .about{ flex-direction:column; } .about img{ max-width:100%; } }
 
@@ -172,7 +184,6 @@ footer { background:#163b52; color:white; text-align:center; padding:25px 0; mar
     line-height: 1.1;
   }
 
-  /* Solo per la frase sotto il titolo */
   .hero-subtitle {
     font-size: 0.9rem !important;
     margin-bottom: 15px;
@@ -258,6 +269,11 @@ footer { background:#163b52; color:white; text-align:center; padding:25px 0; mar
 <footer>
   <p>© 2025 Voyage Virtuoso – Elia Casu</p>
 </footer>
+
+<!-- Logo fisso in basso a sinistra -->
+<a href="index.html" class="bottom-logo">
+  <img src="images/logo.png" alt="Logo Voyage Virtuoso">
+</a>
 
 <script>
 const hamburger = document.getElementById('hamburger');
