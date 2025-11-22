@@ -148,11 +148,21 @@
     }
 
 .about img {
-  flex: 1;
-  max-width: 100%;  /* non superare la larghezza del contenitore */
-  height: auto;     /* mantiene le proporzioni */
+  width: 100%;       /* si adatta alla larghezza del contenitore */
+  max-width: 400px;  /* dimensione massima su desktop */
+  height: auto;      /* mantiene proporzioni */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: none;        /* rimuove l’espansione flex indesiderata */
+  display: block;    /* evita margini/bordi extra dai flexbox */
+  margin: 0 auto;    /* centra l’immagine se il contenitore è più grande */
+}
+
+/* Mobile: se vuoi, puoi ridurre il max-width per telefoni */
+@media(max-width: 768px) {
+  .about img {
+    max-width: 90%; /* occupa quasi tutta la larghezza dello schermo */
+  }
 }
 
     .about .text {
