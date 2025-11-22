@@ -92,34 +92,39 @@
   nav {
   background: #ffd966;
   display: flex;
+  flex-direction: row;    /* sempre orizzontale */
   justify-content: center;
   align-items: center;
-  padding: 8px 10px;
+  flex-wrap: wrap;        /* va su più righe solo se strettissimo */
+  padding: 12px 10px;
   position: sticky;
   top: 0;
   z-index: 100;
-  flex-wrap: nowrap;  /* evita che i link vadano a capo */
 }
 
 nav a {
   color: #1e4d6b;
   text-decoration: none;
   font-weight: bold;
-  margin: 0 8px;       /* margine più piccolo per mobile */
+  margin: 0 10px;
+  font-size: clamp(12px, 4vw, 18px);  /* font che scala con lo schermo */
+  white-space: nowrap;   /* impedisce il ritorno a capo */
   transition: 0.3s;
-  font-size: clamp(12px, 4vw, 16px); /* si riduce con lo schermo */
-  white-space: nowrap;  /* impedisce ritorno a capo */
 }
 
 nav a:hover {
   color: white;
 }
 
-/* Mobile (schermi fino a 768px) */
-@media (max-width: 768px) {
+/* Rimuovere completamente il flex-direction: column sui media query */
+@media(max-width: 768px){
+  nav {
+    flex-direction: row;  /* rimane orizzontale */
+    justify-content: center;
+  }
   nav a {
-    font-size: clamp(10px, 4vw, 14px); /* font ancora più piccolo su telefoni stretti */
-    margin: 0 6px; /* margini più stretti per far stare i link in orizzontale */
+    margin: 0 8px;
+    font-size: clamp(10px, 4vw, 16px);
   }
 }
     /* Sezioni */
