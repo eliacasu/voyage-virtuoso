@@ -55,18 +55,11 @@ body {
   transform: scale(1.05);
 }
 
-/* Responsive: 2 foto per riga su mobile */
-@media(max-width: 768px) {
-  .album {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 200px; /* riduci altezza su mobile */
-  }
-}
   /* Mobile: 1 foto per riga, più alta */
 @media(max-width: 768px) {
   .album {
     grid-template-columns: 1fr; /* 1 foto per riga */
-    grid-auto-rows: 400px;      /* foto più alta su mobile */
+    grid-auto-rows: 300px;      /* foto più alta su mobile */
   }
 }
 </style
