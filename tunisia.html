@@ -19,14 +19,18 @@ body {
   top:15px;
   left:15px;
   z-index:200;
-  width:20px; /* regola la dimensione se serve */
   cursor:pointer;
   transition: transform 0.3s;
 }
+
+.top-logo img {
+  width:40px;   /* larghezza logo */
+  height:auto;  /* proporzioni corrette */
+}
+
 .top-logo:hover {
   transform: scale(1.1);
 }
-
 /* Griglia immagini */
 .album {
   display: grid;
